@@ -1,0 +1,490 @@
+/* ===============================
+   Global animated background
+   =============================== */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    -45deg,
+    #05030c,
+    #12091f,
+    #2b145a,
+    #160b2b
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 18s ease infinite;
+}
+
+/* Background animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===============================
+   Layout
+   =============================== */
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* ===============================
+   Cards
+   =============================== */
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   Headings
+   =============================== */
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ===============================
+   Forms
+   =============================== */
+
+label {
+  display: block;
+  margin: 8px 0 4px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   Dependencies field
+   =============================== */
+
+.field {
+  margin: 10px 0;
+}
+
+.field-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+#depsSelect {
+  min-height: 110px;
+}
+
+#depsSelect option {
+  padding: 4px;
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+
+button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #6a38c2;
+  background: #6a38c2;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  margin-right: 6px;
+}
+
+button:hover {
+  background: #7b49d6;
+}
+
+button[data-del] {
+  background: #999;
+  border-color: #999;
+}
+
+button[data-del]:hover {
+  background: #777;
+}
+
+/* ===============================
+   Task list
+   =============================== */
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===============================
+   Timeline
+   =============================== */
+
+.timeline,
+.unscheduled,
+.explanations {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.time {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.title {
+  margin-bottom: 2px;
+}
+
+.meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   Dependencies display
+   =============================== */
+
+.deps {
+  color: #555;
+  font-size: 0.85rem;
+  margin-left: 6px;
+}
+
+/* ===============================
+   Dependency warnings
+   =============================== */
+
+.warn {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid #ddd;
+}
+
+.warn-missing {
+  border-color: #c00;
+  color: #c00;
+}
+
+.warn-blocked {
+  border-color: #b36b00;
+  color: #b36b00;
+}
+
+.warn-info {
+  border-color: #666;
+  color: #666;
+}
+
+/* ===============================
+   Schedule banners
+   =============================== */
+
+.banner {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+
+.banner-error {
+  border-color: #c00;
+  color: #c00;
+}
+
+.banner-warn {
+  border-color: #b36b00;
+  color: #b36b00;
+}
+
+/* ===============================
+   Explanations
+   =============================== */
+
+.explain-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.explain-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.explain-title {
+  font-weight: bold;
+}
+
+.explain-time {
+  color: #666;
+}
+
+.explain-metrics {
+  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.explain-why {
+  margin-top: 8px;
+}
+
+.explain-why .label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.analytics {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #333;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  margin-right: 6px;
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.85);
+}
+
+.pill-ok { border-color: #0a7; color: #0a7; }
+.pill-bad { border-color: #c00; color: #c00; }
+.pill-warn { border-color: #b36b00; color: #b36b00; }
+.pill-neutral { border-color: #666; color: #666; }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .grid2 { grid-template-columns: 1fr; }
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.formError {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #c00;
+  color: #c00;
+  background: rgba(255, 230, 230, 0.8);
+}
+
+.taskList {
+  margin: 0;
+  padding: 0;
+}
+
+.taskRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  background: rgba(255,255,255,0.75);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.taskRow.dragging {
+  opacity: 0.6;
+}
+
+.taskMain {
+  flex: 1;
+}
+
+.taskMeta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.taskActions {
+  flex: 0 0 auto;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 12px 0 18px;
+  flex-wrap: wrap;
+}
+
+.navlink {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  background: rgba(0,0,0,0.25);
+}
+
+.navlink.active {
+  border-color: #fff;
+  background: rgba(255,255,255,0.2);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeBlock {
+  background: linear-gradient(135deg, #6a5acd, #3a2f6b);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: white;
+}
+
+.timeBlockTitle {
+  font-weight: 600;
+}
+
+.timeBlockTime {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.unscheduledList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.unscheduledItem {
+  background: #2a1f1f;
+  border-left: 4px solid #e06c75;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.unscheduledReason {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-bar {
+  position: relative;
+  height: 28px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.timeline-task {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #7b5cff, #a855f7);
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time {
+  font-size: 12px;
+  opacity: 0.8;
+  text-align: center;
+}
