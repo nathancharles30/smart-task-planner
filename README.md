@@ -30,11 +30,8 @@ Rather than relying on external scheduling libraries, I integrated my own constr
 
 * Duration (Minutes)
 * Deadline (Time-based constraint)
-* 
 
 **Generate a daily schedule within fixed working hours**
-
-
 
 **Intelligent handling of:**
 
@@ -42,21 +39,14 @@ Rather than relying on external scheduling libraries, I integrated my own constr
 * Deadline conflicts
 * Unscheduled tasks
 
-
-
 **Clear visual separation between:**
 
 * Scheduled tasks
 * Unscheduled tasks
-* 
 
 **Persistent state using local storage**
 
-
-
 **Clear-all functionality to reset planning session**
-
-
 
 **Modular JavaScript architecture:**
 
